@@ -1,0 +1,39 @@
+body {
+    background-color: #f0eded;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 20px;
+}
+h1 {
+    color: #373737;
+    text-align: center;
+}
+h2 {
+    color: #373737;
+}
+p {
+    text-align: justify;
+    color: #373737;
+    padding: 10px;
+}
+.highlight {
+    color: #ff5733;
+    font-weight: bold;
+    font-size: 24px;
+}
+.toplinks {
+    background-color: #373737;
+    overflow: hidden;
+}
+.toplinks a {
+    float: left;
+    color: #f0eded;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+.toplinks a:hover {
+    text-decoration: none;
+    background-color: #f0eded;
+    color: #373737;
+}
