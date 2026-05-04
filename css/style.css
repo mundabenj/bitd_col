@@ -14,10 +14,7 @@ h1 {
 h2 {
     text-align: left;
 }
-p {
-    text-align: justify;
-    padding: 10px;
-}
+
 .highlight {
     color: #ff5733;
     font-weight: bold;
@@ -84,4 +81,24 @@ p {
     text-align: center;
     padding: 10px;
     font-size: smaller;
+}
+
+.team_img{
+    overflow: hidden;
+    text-align: center;
+}
+
+.team_img img{
+    width: 200px;
+    height: 280px;
+    border-radius: 20%;
+    padding: 10px;
+    display: block;
+}
+
+.team_member {
+    display: inline-block;
+    text-align: center;
+    font-size: small;
+    text-transform: uppercase;
 }
