@@ -63,14 +63,20 @@ p {
     background-color: #f0eded;
 }
 
+.proj_img {
+    width:40%; 
+    height:auto; 
+    float: left; 
+    padding-right: 10px;
+}
+
 @media screen and (max-width: 900px) {
-    .content, .sidebar {
+    .content, .sidebar, .proj_img {
         width: 100%;
         float: none;
         border-right: none;
     }
 }
-
 
 .footer {
     background-color: #373737;
