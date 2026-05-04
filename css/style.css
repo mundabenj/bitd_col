@@ -2,18 +2,20 @@ body {
     background-color: #f0eded;
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    margin: 20px;
+    margin: 0;
+    color: #373737;
+}
+*{
+    box-sizing: border-box;
 }
 h1 {
-    color: #373737;
     text-align: center;
 }
 h2 {
-    color: #373737;
+    text-align: left;
 }
 p {
     text-align: justify;
-    color: #373737;
     padding: 10px;
 }
 .highlight {
@@ -36,4 +38,34 @@ p {
     text-decoration: none;
     background-color: #f0eded;
     color: #373737;
+}
+.banner {
+    background-color: #ff5733;
+    color: #f0eded;
+    padding: 20px;
+    text-align: center;
+}
+.row::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+.content {
+    float: left;
+    width: 70%;
+    padding: 20px;
+    border-right: 1px solid #373737;
+}
+.sidebar {
+    float: left;
+    width: 30%;
+    padding: 20px;
+    background-color: #f0eded;
+}
+.footer {
+    background-color: #373737;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px;
+    font-size: smaller;
 }
