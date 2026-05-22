@@ -19,5 +19,46 @@
     </script>
     <br>
 <p id="realTime"></p>
+<script>
+    // indexed arrays
+    var colors = ["Red", "Green", "Blue", "Yellow", "Purple"];
+    document.write(colors[0] + "<br>");
+    document.write(colors[1] + "<br>");
+    document.write(colors[2] + "<br>");
+    // Objects
+     var usersDetails = {
+        "Director":{
+            "fullname": ["Alex", "Okama"],
+            "email": {
+                "Home email": "alex.okama@example.com",
+                "Work email": "alex.okama@work.com"
+            },
+            "phone": "+254712345678"
+        },
+        "Manager":{
+            "fullname": ["Ann", "Smith"],
+            "email": {
+                "Home email": "ann.smith@example.com",
+                "Work email": "ann.smith@work.com"
+            },
+            "phone": "+254712345679"
+        },
+        "Secretary":{
+            "fullname": ["Dennis", "Okama"],
+            "email": {
+                "Home email": "dennis.okama@example.com",
+                "Work email": "dennis.okama@work.com"
+            },
+            "phone": "+254712345680"
+        }
+    };
+    document.write(usersDetails.Director.fullname.join(" ") + "<br>");
+    document.write(usersDetails.Secretary.email["Home email"] + "<br>");
+    document.write(usersDetails.Manager.email["Work email"] + "<br>");
+    // document.write(usersDetails.Manager.email.Work email + "<br>");
+    document.write(usersDetails.Director.phone + "<br>");
+</script>
+
+
 </body>
 </html>
