@@ -6,7 +6,7 @@
     <title>Document</title>
     <script src="js/script.js"></script>
 </head>
-<body>
+<body onload="starTime()">
     <script>
     // JavaScript code goes here
     var fruits = ["Apple", "Banana", "Cherry", "Date", "Elderberry"];
@@ -18,13 +18,6 @@
         document.write(greetings("Alex Okama"));
     </script>
     <br>
-    <script>
-        // Get the current date and time
-        var today = new Date();
-        var day = today.getDate();
-        var month = today.getMonth() + 1; // Months are zero-based
-        var year = today.getFullYear();
-        document.write("Today's date is: " + day + "/" + month + "/" + year);
-    </script>
+<p id="realTime"></p>
 </body>
 </html>
