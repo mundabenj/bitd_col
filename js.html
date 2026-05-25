@@ -117,5 +117,46 @@ fruits.forEach(function(fruit){ // use the forEach method to iterate over each e
 </script>
 
 
+<form action="" method="post">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name"><br><br>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email"><br><br>
+    <label for="bod">Date of Birth:</label>
+    
+<select id="day" name="day">
+    <script>
+        document.write("<option value=''>" + new Date().getDate() + " </option>");
+        for(var day = 1; day <= 31; day++){
+            document.write("<option value='" + day + "'>" + day + "</option>");
+        }
+    </script>
+</select>
+<select id="month" name="month">
+    <script>
+        var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        document.write("<option value=''>" + months[new Date().getMonth()] + "</option>");
+        for(var month of months){
+            document.write("<option value='" + month + "'>" + month + "</option>");
+        }
+    </script>
+</select>
+<select id="year" name="year">
+    <script>
+        var currentYear = new Date().getFullYear();
+        document.write("<option value=''>" + currentYear + "</option>");
+        for(var year = currentYear; year >= 1960; year--){
+            document.write("<option value='" + year + "'>" + year + "</option>");
+        }
+    </script>
+</select>
+<br>
+<br>
+    <input type="submit" value="Submit">
+    <input type="reset" value="Reset">
+</form>
+
+
+
 </body>
 </html>
