@@ -89,6 +89,31 @@ do{ // repeat the action at least once and then check the condition
     j++; // increment j by 1 in each iteration
 } while(j < 5); // repeat the action until j is less than 5
 
+
+    // =================
+    // for loop
+    // =================
+document.write("<h3>for Loop</h3>");
+for(var k = 0; k < 5; k++){ // initialize a variable k to 0, repeat the action until k is less than 5, and increment k by 1 in each iteration
+    document.write("The value of k is: " + k + "<br>"); // print the value of k in each iteration
+}
+
+    // =================
+    // array loop
+    // =================
+document.write("<h3>Array Loop</h3>");
+var fruits = ["Apple", "Banana", "Cherry", "Pineapple", "Mango"]; // initialize an array of fruits
+for(var l = 0; l < fruits.length; l++){ // initialize a variable l to 0, repeat the action until l is less than the length of the array, and increment l by 1 in each iteration
+    document.write("The fruit is: " + fruits[l] + "<br>"); // print the value of the array element in each iteration
+}
+document.write("<h3>Array Loop New</h3>");
+for(var fruit of fruits){ // initialize a variable fruit to the value of each element in the array, and repeat the action for each element in the array
+    document.write("The fruit is: " + fruit + "<br>"); // print the value of the array element in each iteration
+}
+document.write("<h3>Array Loop using forEach</h3>");
+fruits.forEach(function(fruit){ // use the forEach method to iterate over each element in the array
+    document.write("The fruit is: " + fruit + "<br>"); // print the value of the array element in each iteration
+});
 </script>
 
 
