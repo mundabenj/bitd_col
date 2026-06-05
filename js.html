@@ -114,9 +114,9 @@ document.write("<h3>Array Loop using forEach</h3>");
 fruits.forEach(function(fruit){ // use the forEach method to iterate over each element in the array
     document.write("The fruit is: " + fruit + "<br>"); // print the value of the array element in each iteration
 });
+
+var TimeDate = new Date();
 </script>
-
-
 <form action="" method="post">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name"><br><br>
@@ -126,9 +126,9 @@ fruits.forEach(function(fruit){ // use the forEach method to iterate over each e
         
     <select id="day" name="day">
         <script>
-            document.write("<option value=''>" + new Date().getDate() + " </option>");
-            for(var day = 1; day <= 31; day++){
-                if(day == new Date().getDate()){ continue; }
+            document.write("<option value=''>" + TimeDate.getDate() + " </option>");
+            for(var day = 1; day <= DaysInMonths(TimeDate); day++){
+                if(day === TimeDate.getDate()){ continue; }
                 document.write("<option value='" + day + "'>" + day + "</option>");
             }
         </script>
@@ -136,18 +136,19 @@ fruits.forEach(function(fruit){ // use the forEach method to iterate over each e
     <select id="month" name="month">
         <script>
             var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-            document.write("<option value=''>" + months[new Date().getMonth()] + "</option>");
+            document.write("<option value=''>" + months[TimeDate.getMonth()] + "</option>");
             for(var month of months){
-                if(month == months[new Date().getMonth()]){ continue; }
+                if(month === months[TimeDate.getMonth()]){ continue; }
                 document.write("<option value='" + month + "'>" + month + "</option>");
             }
         </script>
     </select>
     <select id="year" name="year">
         <script>
-            var currentYear = new Date().getFullYear();
+            var currentYear = TimeDate.getFullYear();
+            var minYear = currentYear - 50;
             document.write("<option value=''>" + currentYear + "</option>");
-            for(var year = currentYear-1; year >= 1990; year--){
+            for(var year = currentYear; year >= minYear; year--){
                 document.write("<option value='" + year + "'>" + year + "</option>");
             }
         </script>

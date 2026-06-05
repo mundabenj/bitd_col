@@ -35,3 +35,27 @@ function formatTime(i){
     if (i < 10) {i = "0" + i};  // Add leading zero to numbers less than 10
     return i;
 }
+
+function DaysInMonths(TimeDate) {
+    // return days in months 
+    var currentMonth = TimeDate.getMonth(); // get the current month (0-11)
+    var monthsWith31Days = [0, 2, 4, 6, 7, 9, 11]; // array of months with 31 days
+    var monthsWith30Days = [3, 5, 8, 10]; // array of months with 30 days
+    var fabruarymonth = 1; // index of February month
+    if(monthsWith31Days.includes(currentMonth)){
+        var DaysInMonth = 31;
+    } else if(monthsWith30Days.includes(currentMonth)){
+        var DaysInMonth = 30;
+    } else if(currentMonth == fabruarymonth){
+        var currentYear = TimeDate.getFullYear(); // get the current year
+        var isLeapYear = (currentYear % 4 === 0 && currentYear % 100 !== 0) || (currentYear % 400 === 0); // check if the current year is a leap year
+        if(isLeapYear){
+            var DaysInMonth = 29; // if it's a leap year, February has 29 days
+        } else {
+            var DaysInMonth = 28; // if it's not a leap year, February has 28 days
+        }
+    } else {
+        var DaysInMonth = 0; // if the month is not valid, return an error message
+    }
+    return DaysInMonth;
+}
