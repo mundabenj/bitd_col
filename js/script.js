@@ -158,9 +158,8 @@ function formValidation(registrationForm) {
             }
 
             if (isValid) {
-                document.getElementById('validation_result').textContent = 'Form is valid! Registration successful.';
-                document.getElementById('validation_result').className = 'success'; 
-                // Here you can also add code to submit the form data to the server if needed
+                document.getElementById('validation_result').textContent = 'Form is valid! Registration successful.'; // Display success message if the form is valid
+                document.getElementById('validation_result').className = 'success'; // Set the class to 'success' for styling          
             } else {
                 document.getElementById('validation_result').textContent = '';
             }
