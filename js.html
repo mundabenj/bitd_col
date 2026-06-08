@@ -97,7 +97,6 @@ document.write("<h3>for Loop</h3>");
 for(var k = 0; k < 5; k++){ // initialize a variable k to 0, repeat the action until k is less than 5, and increment k by 1 in each iteration
     document.write("The value of k is: " + k + "<br>"); // print the value of k in each iteration
 }
-
     // =================
     // array loop
     // =================
@@ -106,7 +105,7 @@ var fruits = ["Apple", "Banana", "Cherry", "Pineapple", "Mango"]; // initialize 
 for(var l = 0; l < fruits.length; l++){ // initialize a variable l to 0, repeat the action until l is less than the length of the array, and increment l by 1 in each iteration
     document.write("The fruit is: " + fruits[l] + "<br>"); // print the value of the array element in each iteration
 }
-document.write("<h3>Array Loop New</h3>");
+document.write("<h3>Array Loop using for...of</h3>");
 for(var fruit of fruits){ // initialize a variable fruit to the value of each element in the array, and repeat the action for each element in the array
     document.write("The fruit is: " + fruit + "<br>"); // print the value of the array element in each iteration
 }
@@ -115,15 +114,22 @@ fruits.forEach(function(fruit){ // use the forEach method to iterate over each e
     document.write("The fruit is: " + fruit + "<br>"); // print the value of the array element in each iteration
 });
 
+// for in loop for objects
+document.write("<h3>for in Loop for Objects</h3>");
+var CarModel = {
+    make: "Toyota",
+    model: "Corolla",
+    year: 2020,
+    color: "Red"
+};
+for (var CarDetail in CarModel) {
+    document.write(CarDetail + ": " + CarModel[CarDetail] + "<br>");
+}
+
 var TimeDate = new Date();
 </script>
 <form action="" method="post">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name"><br><br>
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email"><br><br>
-        <label for="bod">Date of Birth:</label>
-        
+<h3>Select Registration Date</h3>
     <select id="day" name="day">
         <script>
             document.write("<option value=''>" + TimeDate.getDate() + " </option>");
