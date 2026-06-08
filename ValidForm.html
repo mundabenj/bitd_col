@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .registration-form {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            box-sizing: border-box;
+            font-size: 1.6em;
+            font-family: Arial, sans-serif;
+        }
+        .field {
+            margin-bottom: 12px;
+        }
+        .error {
+            color: red;
+            margin: 0;
+        }
+        .success {
+            color: green;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <form action="" method="post" id="registrationForm" class="registration-form">
+        <h2>Registration Form</h2>
+        <div class="field">
+            <label for="fullname">Full Name:</label><br>
+            <input type="text" id="fullname" name="fullname" maxlength="60"><br>
+            <p id="fullNameError" class="error"></p>
+        </div>
+        <div class="field">
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email"><br>
+            <p id="emailError" class="error"></p>
+        </div>
+        <div class="field">
+            <label for="tel">Phone:</label><br>
+            <input type="tel" id="tel" name="tel"><br>
+            <p id="telError" class="error"></p>
+        </div>
+        <div class="field">
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password"><br>
+            <p id="passwordError" class="error"></p>
+        </div>
+        <div class="field">
+            <label for="confirmPassword">Confirm Password:</label><br>
+            <input type="password" id="confirmPassword" name="confirmPassword"><br>
+            <p id="confirmPasswordError" class="error"></p>
+        </div>
+        <button type="submit">Register</button>
+        <p id="successMessage" class="success"></p>
+    </form>
+</body>
+</html>
