@@ -47,9 +47,9 @@
             <p id="emailError" class="error"></p>
         </div>
         <div class="field">
-            <label for="tel">Phone:</label><br>
-            <input type="tel" id="tel" name="tel"><br>
-            <p id="telError" class="error"></p>
+            <label for="phone">Phone:</label><br>
+            <input type="tel" id="phone" name="phone"><br>
+            <p id="phoneError" class="error"></p>
         </div>
         <div class="field">
             <label for="password">Password:</label><br>
@@ -62,7 +62,48 @@
             <p id="confirmPasswordError" class="error"></p>
         </div>
         <button type="submit">Register</button>
-        <p id="successMessage" class="success"></p>
+        <p id="validation_result" class="success"></p>
     </form>
+    <script>
+        // JavaScript code for form validation will go here
+        // Creat an event listener for form submission
+        document.getElementById('registrationForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission behavior
+
+            // Clear previous error messages
+            document.getElementById('fullNameError').textContent = '';
+            document.getElementById('emailError').textContent = '';
+            document.getElementById('phoneError').textContent = '';
+            document.getElementById('passwordError').textContent = '';
+            document.getElementById('confirmPasswordError').textContent = '';
+            document.getElementById('validation_result').textContent = '';
+
+            // Flag to track if the form is valid
+            let isValid = true;
+
+            // Validate Full Name
+            const fullName = document.getElementById('fullname').value.trim();
+            if (fullName === '') { // Check if full name is empty
+                document.getElementById('fullNameError').textContent = 'Full Name is required.';
+                isValid = false;
+            } else if (fullName.length < 3 || fullName.length > 60) { // Check if full name is between 3 and 60 characters
+                document.getElementById('fullNameError').textContent = 'Full Name must be between 3 and 60 characters.';
+                isValid = false;
+            }else if (!/^[a-zA-Z\s']+$/.test(fullName)) { // Check if full name contains only letters, spaces, and apostrophes
+                document.getElementById('fullNameError').textContent = 'Full Name can only contain letters, spaces, and apostrophes.';
+                isValid = false;
+            }
+
+
+
+            if (isValid) {
+                document.getElementById('validation_result').textContent = 'Form is valid! Registration successful.';
+                document.getElementById('validation_result').className = 'success'; 
+                // Here you can also add code to submit the form data to the server if needed
+            }else {
+                document.getElementById('validation_result').textContent = '';
+            }
+        });
+    </script>
 </body>
 </html>
