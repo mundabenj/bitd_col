@@ -167,3 +167,31 @@ tr:hover {
 .contactForm button:hover {
     background-color: #2980b9;
 }
+
+/* CSS for the ValidForm.html page */
+        .registration-form {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .registration-form input, button {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            box-sizing: border-box;
+            font-size: 1.6em;
+            font-family: Arial, sans-serif;
+        }
+        .registration-form .field {
+            margin-bottom: 12px;
+        }
+        .registration-form .error {
+            color: red;
+            margin: 0;
+        }
+        .registration-form .success {
+            color: green;
+            margin: 0;
+        }
