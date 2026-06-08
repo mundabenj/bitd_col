@@ -53,12 +53,12 @@
         </div>
         <div class="field">
             <label for="password">Password:</label><br>
-            <input type="password" id="password" name="password" required><br>
+            <input type="password" id="password" name="password" value="123Qwe&" required><br>
             <p id="passwordError" class="error"></p>
         </div>
         <div class="field">
             <label for="confirmPassword">Confirm Password:</label><br>
-            <input type="password" id="confirmPassword" name="confirmPassword" required><br>
+            <input type="password" id="confirmPassword" name="confirmPassword"><br>
             <p id="confirmPasswordError" class="error"></p>
         </div>
         <button type="submit">Register</button>
@@ -130,7 +130,27 @@
                     isValid = false;
                 }
             }
-
+            // Validate Password
+            const password = document.getElementById('password').value;
+            if(password === ''){ // Check if password is empty
+                document.getElementById('passwordError').textContent = 'Password is required.';
+                isValid = false;
+            } else if (password.length < 6) { // Check if password is at least 6 characters long
+                document.getElementById('passwordError').textContent = 'Password must be at least 6 characters long.';
+                isValid = false;
+            } else if (!/[A-Z]/.test(password)) { // Check if password contains at least one uppercase letter
+                document.getElementById('passwordError').textContent = 'Password must contain at least one uppercase letter.';
+                isValid = false;
+            } else if (!/[a-z]/.test(password)) { // Check if password contains at least one lowercase letter
+                document.getElementById('passwordError').textContent = 'Password must contain at least one lowercase letter.';
+                isValid = false;
+            } else if (!/\d/.test(password)) { // Check if password contains at least one digit
+                document.getElementById('passwordError').textContent = 'Password must contain at least one digit.';
+                isValid = false;
+            } else if (!/[!@#$%^&*(),.?":{}|<>]/.test(password)) { // Check if password contains at least one special character
+                document.getElementById('passwordError').textContent = 'Password must contain at least one special character.';
+                isValid = false;
+            }
 
             if (isValid) {
                 document.getElementById('validation_result').textContent = 'Form is valid! Registration successful.';
