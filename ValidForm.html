@@ -147,8 +147,17 @@
             } else if (!/\d/.test(password)) { // Check if password contains at least one digit
                 document.getElementById('passwordError').textContent = 'Password must contain at least one digit.';
                 isValid = false;
-            } else if (!/[!@#$%^&*(),.?":{}|<>]/.test(password)) { // Check if password contains at least one special character
+            } else if (!/[!@#$%^&*(),.?":{}'|<>]/.test(password)) { // Check if password contains at least one special character
                 document.getElementById('passwordError').textContent = 'Password must contain at least one special character.';
+                isValid = false;
+            }
+            // Validate Confirm Password
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            if (confirmPassword === '') { // Check if confirm password is empty
+                document.getElementById('confirmPasswordError').textContent = 'Please confirm your password.';
+                isValid = false;
+            } else if (confirmPassword !== password) { // Check if confirm password matches the password
+                document.getElementById('confirmPasswordError').textContent = 'Passwords do not match.';
                 isValid = false;
             }
 
@@ -156,7 +165,7 @@
                 document.getElementById('validation_result').textContent = 'Form is valid! Registration successful.';
                 document.getElementById('validation_result').className = 'success'; 
                 // Here you can also add code to submit the form data to the server if needed
-            }else {
+            } else {
                 document.getElementById('validation_result').textContent = '';
             }
         });
